@@ -1,4 +1,4 @@
-# 🎯 Tournament Management System
+# 🎯 Tournament Management System - T-M-S
 
 The **Tournament Management System** is a comprehensive platform designed to manage and organize sporting events, ensuring smooth coordination and tracking of all games, players, and match details. It provides an all-in-one solution for managing tournaments, from initial player registrations to final match results.
 
