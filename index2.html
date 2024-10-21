@@ -1,0 +1,63 @@
+<!--Admin Page-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TMS - Website-Admin</title>
+        <link rel="stylesheet" href="assets/style1.css">
+        <link rel="icon" href="assets/img/logo1.jpg">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    </head>
+    <body>
+        <div class="scrolling-bar"></div>
+        <header>
+            <h2 class="logo"><img src="assets/img/logo.png"
+                    alt="Website logo"></h2>
+            <ul>
+                <li><i class="fa-solid fa-house"></i><a
+                        href="index2.html">Home</a></li>
+                <li class="events-dropdown">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <a href="#view">View <i
+                            class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="olympics_2024.php">Olympics 2024</a></li>
+                        <li><a href="#wimbledon">Wimbledon 2024</a></li>
+                        <li><a href="#badminton">World Badminton Championship
+                                2018</a></li>
+                        <li><a href="#archery">Archery World Cup 2021</a></li>
+                        <li><a href="#shooting">Shooting World Cup 2019</a></li>
+                        <li><a href="#table">Table Tennis World Cup
+                                2021</a></li>
+                    </ul>
+                </li>
+                <li><a href="edit.html">Edit</a></li>
+                <li><a href="sponsors.html">Sponsors</a></li>
+                <li class="user-dropdown">
+                    <a href="javascript:void(0);" id="user-icon"><i
+                            class="fa-regular fa-user"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#username">Hi, <span
+                                    id="display-username">Admin</span>
+                                👋</a></li>
+                        <li><a href="help.html">Help</a></li>
+                        <li><button id="logout-button">Log Out</button></li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+
+        <section class="main">
+            <div class="text-center">
+                <h1 class="banner-heading">WELCOME</h1>
+                <h3 class="theme" id="dynamicText">The only way to prove that
+                    you’re a good sport is to lose.</h3>
+            </div>
+        </section>
+
+        <script src="assets/app1.js"></script>
+    </body>
+</html>

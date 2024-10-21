@@ -1,0 +1,537 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Sixtyfour+Convergence&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 1s ease;
+}
+
+body {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.36);
+  font-family: "Nunito", sans-serif;
+}
+
+div .scrolling-bar {
+  height: 50vh;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.274);
+  border-radius: 30px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 2px;
+  transition: 0.6s;
+  z-index: 1000;
+  background-color: transparent;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+header ul li {
+  position: relative;
+  list-style: none;
+  font-size: 1.2rem;
+}
+
+header ul li a {
+  margin: 5px 5px;
+  text-decoration: none;
+  color: black;
+  font-family: "Roboto Slab", serif;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+header ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: rgba(250, 68, 7, 0.36); /* Color of the underline */
+  left: 0;
+  bottom: -5px;
+  transition: width 0.8s ease;
+}
+
+header ul li a:hover::after {
+  width: 100%;
+}
+
+header ul li a:hover {
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.444);
+  border-radius: 10px;
+}
+
+.fa-solid {
+  color: black;
+  font-size: 1.3rem;
+}
+
+.fa-user {
+  color: black;
+  margin-right: 50px;
+  cursor: pointer;
+  font-size: 1.9rem;
+  transition: transform 0.3s ease; /* Smooth scaling */
+}
+
+.fa-chevron-down {
+  font-size: 1rem;
+}
+
+.logo img {
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+  margin-left: 60px;
+}
+
+/* Events Dropdown Menu */
+.events-dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0; /* Align to the left relative to the parent */
+  background: rgba(255, 255, 255, 0.245);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.185);
+  display: none; /* Initially hidden */
+  flex-direction: column;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  width: 250px; /* Increased width */
+}
+
+/* User Profile Dropdown Menu */
+.user-dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0; /* Align to the right relative to the parent */
+  background: rgba(255, 255, 255, 0.245);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.185);
+  border-style: solid;
+  border-width: 0 20px 20px 0;
+  display: none; /* Initially hidden */
+  flex-direction: column;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  width: 230px; /* Increased width */
+}
+/* .user-dropdown::before {
+  content: " ";
+  position: absolute;
+  top: 29px;
+  right: 45px;
+  border-style: solid;
+  border-width: 0 20px 20px 0;
+  border-color: transparent #204a80 transparent transparent;
+} */
+
+.events-dropdown.active .dropdown-menu,
+.user-dropdown.active .dropdown-menu {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-menu li {
+  width: 100%;
+  margin: 0;
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Line after each item */
+}
+
+.dropdown-menu li a,
+.dropdown-menu li button {
+  padding: 10px 15px;
+  display: block;
+  color: black;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: left;
+  width: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li button:hover {
+  margin-left: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.dropdown-arrow {
+  margin-left: 5px;
+  transition: transform 0.5s ease;
+}
+
+.events-dropdown.active .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+header.sticky {
+  background-color: rgba(255, 255, 255, 0.556);
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.44);
+}
+
+/* Main section  */
+
+.main {
+  height: 100vh;
+  width: 100%;
+  background: url("/assets/img/Olympics.jpg") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Vertically centers the content */
+  text-align: center; /* Centers text horizontally */
+}
+
+.text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Aligns items in the center */
+}
+
+.banner-heading {
+  color: black;
+  font-family: "caveat";
+  font-size: 60px; /* Adjust font size */
+  font-weight: 300; /* Light font weight */
+  margin-bottom: 20px; /* Add some spacing below the heading */
+  font-family: "Qwitcher Grypen", cursive;
+}
+
+.theme {
+  font-family: "Sixtyfour Convergence", sans-serif;
+  font-size: 1rem;
+  margin-top: 20px;
+  white-space: nowrap; /* Prevents the text from wrapping */
+  overflow: hidden; /* Hides the overflowing text */
+  border-right: 3px solid black; /* Optional: cursor effect */
+  display: inline-block; /* Ensures the text animation works */
+  width: 0; /* Start with no text visible */
+  animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+.user-dropdown > a {
+  text-decoration: none; /* Remove underline */
+}
+
+.user-dropdown > a::after {
+  display: none; /* Remove the underline pseudo-element */
+}
+
+/* Increase icon size on hover */
+#user-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-dropdown > a > i {
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.user-dropdown > a:hover > i {
+  transform: scale(1.2); /* Increase size on hover */
+}
+
+/* Stylish Logout Button */
+#logout-button {
+  padding: 10px 20px;
+  background-color: #e74c3c; /* Red background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#logout-button:hover {
+  background-color: #c0392b; /* Darker red on hover */
+  transform: translateY(-4px); /* Slight lift on hover */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  header .logo {
+    margin-bottom: 10px;
+  }
+
+  header ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  header ul li {
+    font-size: 1rem;
+  }
+
+  .events-dropdown .dropdown-menu,
+  .user-dropdown .dropdown-menu {
+    left: 0; /* Align dropdown to the left */
+    right: auto; /* Reset right alignment */
+    width: 200px; /* Adjust width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 10px 10px;
+  }
+
+  header .logo {
+    font-size: 1.5rem;
+  }
+
+  header ul li {
+    font-size: 0.9rem;
+  }
+
+  .logo img {
+    height: 60px;
+    width: 60px;
+  }
+
+  .events-dropdown .dropdown-menu,
+  .user-dropdown .dropdown-menu {
+    width: 150px; /* Further adjust width for very small screens */
+  }
+}
+
+/* Key Frames */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%; /* Ensure full text appears */
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
+
+.scrolling-bar {
+  height: 5px;
+  background-color: #ff6600;
+  width: 100%;
+}
+
+table {
+  width: 80%;
+  margin: 20px auto;
+  background: transparent;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+/* TABLE STYLES */
+
+/* Table Container */
+.table-container {
+  margin: 0 auto;
+  max-width: 90%;
+  overflow-x: auto;
+  border-radius: 15px;
+  padding: 20px;
+  background: linear-gradient(
+    145deg,
+    #e0e0e0,
+    #f9f9f9
+  ); /* Gradient background */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Deep shadow */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Roboto", sans-serif;
+  background-color: #ffffff; /* White table background */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* Light shadow for depth */
+}
+
+thead {
+  background: linear-gradient(135deg, #0d47a1, #42a5f5); /* Blue gradient */
+  color: white;
+  font-size: 18px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 15px 25px;
+  font-size: 16px;
+  border-bottom: 1px solid #f0f0f0; /* Subtle border between rows */
+}
+
+tbody tr:hover {
+  background: linear-gradient(
+    45deg,
+    #f9f9f9,
+    #ececec
+  ); /* Light gradient on hover */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05); /* Subtle inset shadow */
+  cursor: pointer;
+  transition: background 0.4s ease;
+}
+
+th {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Text shadow for header */
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f3f3f3;
+}
+tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+/* Links Styling */
+.table_items {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.2s ease-in;
+}
+
+.table_items:hover {
+  color: #0d47a1; /* Match the header blue on hover */
+  text-decoration: underline;
+}
+
+/* Advanced Button Styling */
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin: 15px 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  color: #fff;
+  display: inline-block;
+}
+
+/* Primary button style */
+#logout-button {
+  background: linear-gradient(145deg, #e53935, #ef5350); /* Red gradient */
+  box-shadow: 0 6px 12px rgba(255, 82, 82, 0.3); /* Shadow for button */
+}
+
+#logout-button:hover {
+  background: linear-gradient(145deg, #ef5350, #e53935); /* Hover effect */
+  box-shadow: 0 8px 16px rgba(255, 82, 82, 0.4); /* Enhanced shadow on hover */
+}
+
+/* Secondary button style (Help) */
+button.secondary {
+  background: linear-gradient(145deg, #43a047, #66bb6a); /* Green gradient */
+  box-shadow: 0 6px 12px rgba(67, 160, 71, 0.3);
+}
+
+button.secondary:hover {
+  background: linear-gradient(145deg, #66bb6a, #43a047);
+  box-shadow: 0 8px 16px rgba(67, 160, 71, 0.4);
+}
+
+/* Apply rounded buttons with smooth hover */
+button.rounded {
+  border-radius: 50px;
+  padding: 10px 20px;
+  background: linear-gradient(145deg, #1e88e5, #42a5f5); /* Blue gradient */
+  box-shadow: 0 6px 12px rgba(33, 150, 243, 0.3);
+}
+
+button.rounded:hover {
+  background: linear-gradient(145deg, #42a5f5, #1e88e5);
+  box-shadow: 0 8px 16px rgba(33, 150, 243, 0.4);
+}
+
+/* Add responsive behavior */
+@media screen and (max-width: 768px) {
+  th,
+  td {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .table-container {
+    max-width: 100%;
+  }
+}
+.match-view-buttons button {
+  background: linear-gradient(145deg, #1e88e5, #42a5f5); /* Blue gradient */
+  box-shadow: 0 6px 12px rgba(33, 150, 243, 0.3);
+  color: black;
+  font-size: 1rem;
+}

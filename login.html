@@ -1,0 +1,97 @@
+<!--Login Page-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Advanced Login Page</title>
+        <link rel="stylesheet" href="assets/styles.css">
+        <!-- Optional: Include Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="form-container">
+                <!-- Role Toggle for Admin and User -->
+                <div class="role-toggle">
+                    <button id="user-toggle" class="active">User</button>
+                    <button id="admin-toggle">Admin</button>
+                </div>
+
+                <!-- Forms for User and Admin -->
+                <div class="forms">
+                    <!-- User Sign In Form -->
+                    <form id="signin-form" class="form fade-in" style="display: block;">
+                        <h2>User Sign In</h2>
+                        <div class="message-container">
+                            <p class="error-message" id="signin-error"></p>
+                            <p class="success-message" id="signin-success"></p>
+                        </div>
+                        <label for="signin-username">Username:</label>
+                        <input type="text" id="signin-username" required placeholder="Enter your username">
+                        <label for="signin-password">Password:</label>
+                        <input type="password" id="signin-password" required placeholder="Enter your password">
+                        <button type="submit">Sign In</button>
+                    </form>
+                     <!-- Sign Up Form -->
+                     <form id="signup-form" class="form fade-in"
+                     style="display: none;">
+                     <h2>Sign Up</h2>
+                     <div class="message-container">
+                         <p class="error-message" id="signup-error"></p>
+                         <p class="success-message" id="signup-success"></p>
+                     </div>
+                     <label for="signup-username">Username:</label>
+                     <input type="text" id="signup-username" required
+                         placeholder="Choose a username">
+                     <label for="signup-email">Email:</label>
+                     <input type="email" id="signup-email" required
+                         placeholder="Enter your email">
+                     <label for="signup-password">Password:</label>
+                     <input type="password" id="signup-password" required
+                         placeholder="Create a password">
+                     <button type="submit">Sign Up</button>
+                 </form>
+
+
+                    <!-- Admin Sign In Form -->
+                    <form id="admin-form" class="form fade-in" style="display: none;">
+                        <h2>Admin Sign In</h2>
+                        <div class="message-container">
+                            <p class="error-message" id="admin-error"></p>
+                            <p class="success-message" id="admin-success"></p>
+                        </div>
+                        <label for="admin-id">Admin ID:</label>
+                        <input type="text" id="admin-id" required placeholder="Enter Admin ID">
+                        <label for="admin-password">Admin Password:</label>
+                        <input type="password" id="admin-password" required placeholder="Enter Admin Password">
+                        <button type="submit">Sign In as Admin</button>
+                    </form>
+
+                    <!-- Forgot Password Form -->
+                    <form id="forgot-form" class="form fade-in"
+                        style="display: none;">
+                        <h2>Forgot Password</h2>
+                        <div class="message-container">
+                            <p class="error-message" id="forgot-error"></p>
+                            <p class="success-message" id="forgot-success"></p>
+                        </div>
+                        <label for="forgot-email">Enter your registered
+                            Email:</label>
+                        <input type="email" id="forgot-email" required
+                            placeholder="Enter your email">
+                        <button type="submit">Reset Password</button>
+                    </form>
+                </div>
+
+                <!-- Toggle buttons for User options -->
+                <div class="form-toggle">
+                    <button id="signin-toggle" class="active">Sign In</button>
+                    <button id="signup-toggle">Sign Up</button>
+                    <button id="forgot-toggle">Forgot Password</button>
+                </div>
+            </div>
+        </div>
+        <script src="assets/script.js"></script>
+    </body>
+</html>

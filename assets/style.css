@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap");
+
+/* Parent Container with Background Image */
+.nav-bar {
+  background-image: url("/assets/img/main.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Default navbar style (transparent background) */
+.navbar {
+  position: fixed;
+  width: 100%;
+  /* background-color: transparent; */
+  transition: background-color 0.3s ease;
+}
+
+/* Change background when scrolling */
+.navbar.scrolled {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for effect */
+}
+
+/* Additional styling */
+.navbar a {
+  color: #000; /* Default link color */
+  text-decoration: none;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #ff5733; /* Color on hover */
+}
+
+.navbar .active {
+  font-size: 3rem;
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed; /* Ensure the navbar is fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it stays above other content */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background: transparent; /* Fully transparent background */
+  box-shadow: none; /* Remove shadow for full transparency */
+  height: 90px;
+}
+
+/* Styles for sticky navbar */
+.navbar.sticky {
+  background-color: transparent; /* Fully transparent background */
+  transition: background-color 0.3s ease;
+  padding: 10px 50px; /* Adjust padding if necessary */
+  box-shadow: none; /* Remove shadow for complete transparency */
+}
+
+/* Adjust the banner section to prevent content from hiding behind the navbar */
+.banner-section-bg-container {
+  margin-top: 90px; /* Adjust based on the navbar height */
+  height: calc(100vh - 90px); /* Adjust based on navbar height */
+  display: flex;
+  align-items: center; /* Vertically center */
+  justify-content: center; /* Horizontally center */
+  text-align: center;
+  padding-top: 60px; /* To prevent content being hidden behind navbar */
+}
+
+.navbar-nav .nav-link {
+  margin-left: 10px; /* Adds spacing between nav items */
+  color: rgb(0, 0, 0);
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem; /* Adjust font size as needed */
+  position: relative;
+  display: inline-block;
+}
+
+/* Add underline effect on hover */
+.navbar-nav .nav-link::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px; /* Adjust the underline thickness */
+  bottom: 0px; /* Position below the text */
+  left: 0;
+  background-color: black; /* Underline color */
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::before {
+  visibility: visible;
+  width: 100%; /* Full width underline on hover */
+}
+
+/* Logo Size */
+.logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center; /* Centers logo vertically */
+}
+
+.pfp {
+  margin-left: 30px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Banner Section Styles */
+.banner-heading {
+  color: black;
+  font-family: "caveat";
+  font-size: 60px; /* Adjust font size */
+  font-weight: 300; /* Light font weight */
+  margin-top: -140px;
+}
+
+.theme {
+  font-family: "Sixtyfour Convergence", sans-serif;
+  font-size: 1rem;
+  margin-top: 20px;
+  white-space: nowrap; /* Prevents the text from wrapping */
+  overflow: hidden; /* Hides the overflowing text */
+  border-right: 3px solid black; /* Optional: cursor effect */
+  display: inline-block; /* Ensures the text animation works */
+  width: 0; /* Start with no text visible */
+  animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%; /* Ensure full text appears */
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
+
+/* Additional Image Styling (if needed) */
+.image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,181 @@
+<!--Edit Page-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TMS - Website</title>
+        <link rel="stylesheet" href="assets/style1.css">
+        <link rel="icon" href="assets/img/logo1.jpg">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    background-image: url('assets/img/edit main.jpg'); /* Path to your background image */
+                    background-size: cover; /* Cover the entire viewport */
+                    background-position: center; /* Center the image */
+                    background-repeat: no-repeat; /* No repeat */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    color: #fff; /* Set default text color */
+                }
+            
+                /* Container for the clickable boxes */
+                .box-container {
+                    display: flex;
+                    justify-content: center;
+                    gap: 30px;
+                    padding: 50px 0;
+                }
+            
+                /* Styling each box */
+                .box {
+                    width: 300px;
+                    height: 300px;
+                    border-radius: 15px;
+                    text-align: center;
+                    padding: 20px;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none; /* Ensures the link has no underline */
+                    color: #fff; /* Default text color */
+                    position: relative; /* For absolute positioning of text */
+                    overflow: hidden; /* To contain the text effect */
+                }
+            
+                /* Individual box styles with background images */
+                .box:nth-child(1) {
+                    background-image: url('assets/img/box1.jpg'); /* Path to your image */
+                    background-size: cover; /* Cover the box */
+                    background-position: center; /* Center the image */
+                }
+            
+                .box:nth-child(2) {
+                    background-image: url('assets/img/box2.jpg'); /* Path to your image */
+                    background-size: cover; /* Cover the box */
+                    background-position: center; /* Center the image */
+                }
+            
+                .box:nth-child(3) {
+                    background-image: url('assets/img/box3.jpg'); /* Path to your image */
+                    background-size: cover; /* Cover the box */
+                    background-position: center; /* Center the image */
+                }
+            
+                .box:nth-child(4) {
+                    background-image: url('assets/img/box4.jpg'); /* Path to your image */
+                    background-size: cover; /* Cover the box */
+                    background-position: center; /* Center the image */
+                }
+                .box:nth-child(4) {
+                    background-image: url('assets/img/box4.jpg'); /* Path to your image */
+                    background-size: cover; /* Cover the box */
+                    background-position: center; /* Center the image */
+                }
+                .box:nth-child(5) {
+                    background-image: url('assets/img/archery.webp'); /* Path to your image */
+                    background-size: cover; /* Cover the box */
+                    background-position: center; /* Center the image */
+                }
+                /* Hover effect for the boxes */
+                .box:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+                }
+            
+                /* Content inside each box */
+                .box-content {
+                    font-size: 22px; /* Increase font size */
+                    font-weight: bold; /* Bold text */
+                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Text shadow */
+                    position: absolute; /* Position text absolutely */
+                    bottom: 20px; /* Position it near the bottom */
+                    left: 50%; /* Center it horizontally */
+                    transform: translateX(-50%); /* Adjust for centering */
+                    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+                    padding: 10px; /* Padding around the text */
+                    border-radius: 5px; /* Rounded corners for the background */
+                    width: calc(100% - 20px); /* Adjust width to fit the box */
+                    text-align: center; /* Center the text */
+                }
+            </style>
+
+    </head>
+    <body>
+        <div class="scrolling-bar"></div>
+        <header>
+            <h2 class="logo"><img src="assets/img/logo.png"
+                    alt="Website logo"></h2>
+            <ul>
+                <li><i class="fa-solid fa-house" style="color: white;"></i><a
+                        href="index2.html" style="color: white;">Home</a></li>
+                <!-- Events Dropdown -->
+                <li class="events-dropdown" style="color: white;">
+                    <i class="fa-solid fa-calendar-days"
+                        style="color: white;"></i>
+                    <a href="#event" style="color: white;">Events <i
+                            class="fa-solid fa-chevron-down dropdown-arrow"
+                            style="color: white;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="olympics_2024.php">Olympics 2024</a></li>
+                        <li><a href="#wimbledon">Wimbledon 2024</a></li>
+                        <li><a href="#badminton">World Badminton Championship
+                                2018</a></li>
+                        <li><a href="#archery">Archery World Cup 2021</a></li>
+                        <li><a href="#shooting">Shooting World Cup 2019</a></li>
+                        <li><a href="#table">Table Tennis World Cup
+                                2021</a></li>
+                    </ul>
+                </li>
+                <li><a href="edit.html" style="color: white;">Edit</a></li>
+                <li><a href="sponsors.html"
+                        style="color: white;">Sponsors</a></li>
+                <!-- User Profile Dropdown -->
+                <li class="user-dropdown">
+                    <a href="javascript:void(0);" id="user-icon"><i
+                            class="fa-regular fa-user"
+                            style="color: white;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#username">Hi, <span
+                                    id="display-username">Admin</span>
+                                👋</a></li>
+                        <li><a href="help.html">Help</a></li>
+                        <li><button id="logout-button">Log Out</button></li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+
+        <!-- Box Container -->
+        <div class="box-container">
+            <a href="Add-tournaments.php" class="box">
+                <div class="box-content">Add Tournament</div>
+            </a>
+            <a href="Add-sports.php" class="box">
+                <div class="box-content">Add Sports</div>
+            </a>
+            <a href="Add-players.php" class="box">
+                <div class="box-content">Add Players</div>
+            </a>
+            <a href="Add-match.php" class="box">
+                <div class="box-content">Add Matches<span
+                        class="plus">+</span></div>
+            </a>
+            <a href="Add-match-details.php" class="box">
+                <div class="box-content">Matches- Details</div>
+            </a>
+        </div>
+
+        <script src="assets/app1.js"></script>
+    </body>
+</html>
