@@ -14,7 +14,9 @@ function toggleForm(formToShow) {
 
 // Function to set active button styling
 function setActiveButton(activeBtn) {
-  const buttons = document.querySelectorAll(".form-toggle button, .role-toggle button");
+  const buttons = document.querySelectorAll(
+    ".form-toggle button, .role-toggle button"
+  );
   buttons.forEach((btn) => {
     btn.classList.remove("active");
   });
@@ -48,7 +50,9 @@ function displayMessage(elementId, message, isError = true) {
 
 // Function to clear messages
 function clearMessages() {
-  const messageElements = document.querySelectorAll(".error-message, .success-message");
+  const messageElements = document.querySelectorAll(
+    ".error-message, .success-message"
+  );
   messageElements.forEach((element) => {
     element.textContent = "";
   });
@@ -101,7 +105,10 @@ document.getElementById("signup-form").addEventListener("submit", function (e) {
   const password = document.getElementById("signup-password").value.trim();
 
   if (!validateUsername(username)) {
-    displayMessage("signup-error", "Please choose a valid username (alphanumeric, 3-15 characters).");
+    displayMessage(
+      "signup-error",
+      "Please choose a valid username (alphanumeric, 3-15 characters)."
+    );
     return;
   }
 
@@ -111,7 +118,10 @@ document.getElementById("signup-form").addEventListener("submit", function (e) {
   }
 
   if (password.length < 6) {
-    displayMessage("signup-error", "Password must be at least 6 characters long.");
+    displayMessage(
+      "signup-error",
+      "Password must be at least 6 characters long."
+    );
     return;
   }
 
@@ -120,18 +130,28 @@ document.getElementById("signup-form").addEventListener("submit", function (e) {
   const userExists = users.some((user) => user.username === username);
   const emailExists = users.some((user) => user.email === email);
   if (userExists) {
-    displayMessage("signup-error", "Username is already taken. Please choose another.");
+    displayMessage(
+      "signup-error",
+      "Username is already taken. Please choose another."
+    );
     return;
   }
   if (emailExists) {
-    displayMessage("signup-error", "An account with this email already exists.");
+    displayMessage(
+      "signup-error",
+      "An account with this email already exists."
+    );
     return;
   }
 
-  users.push({ username, email, password });
+  users.push({username, email, password});
   saveUsers(users);
 
-  displayMessage("signup-success", "Signed up successfully! You can now sign in.", false);
+  displayMessage(
+    "signup-success",
+    "Signed up successfully! You can now sign in.",
+    false
+  );
   setTimeout(() => {
     toggleForm(document.getElementById("signin-form"));
     setActiveButton(document.getElementById("signin-toggle"));
@@ -152,7 +172,10 @@ document.getElementById("signin-form").addEventListener("submit", function (e) {
   const user = users.find((user) => user.username === username);
 
   if (!user) {
-    displayMessage("signin-error", "No account found with this username. Please sign up.");
+    displayMessage(
+      "signin-error",
+      "No account found with this username. Please sign up."
+    );
     return;
   }
 
@@ -183,16 +206,25 @@ document.getElementById("forgot-form").addEventListener("submit", function (e) {
     return;
   }
 
-  const newPassword = prompt("Enter your new password (at least 6 characters):");
+  const newPassword = prompt(
+    "Enter your new password (at least 6 characters):"
+  );
   if (newPassword === null || newPassword.length < 6) {
-    displayMessage("forgot-error", "Password must be at least 6 characters long.");
+    displayMessage(
+      "forgot-error",
+      "Password must be at least 6 characters long."
+    );
     return;
   }
 
   users[userIndex].password = newPassword;
   saveUsers(users);
 
-  displayMessage("forgot-success", "Password reset successfully! You can now sign in with your new password.", false);
+  displayMessage(
+    "forgot-success",
+    "Password reset successfully! You can now sign in with your new password.",
+    false
+  );
   setTimeout(() => {
     toggleForm(document.getElementById("signin-form"));
     setActiveButton(document.getElementById("signin-toggle"));

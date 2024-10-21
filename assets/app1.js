@@ -55,50 +55,56 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Admin Sign In Form Submission
-  document.getElementById("admin-form")?.addEventListener("submit", function (e) {
-    e.preventDefault();
-    clearMessages();
+  document
+    .getElementById("admin-form")
+    ?.addEventListener("submit", function (e) {
+      e.preventDefault();
+      clearMessages();
 
-    const adminID = document.getElementById("admin-id").value.trim();
-    const adminPassword = document.getElementById("admin-password").value.trim();
+      const adminID = document.getElementById("admin-id").value.trim();
+      const adminPassword = document
+        .getElementById("admin-password")
+        .value.trim();
 
-    // Fixed Admin credentials
-    const fixedAdminID = "admin123";
-    const fixedAdminPassword = "adminPass";
+      // Fixed Admin credentials
+      const fixedAdminID = "admin123";
+      const fixedAdminPassword = "adminPass";
 
-    if (adminID === fixedAdminID && adminPassword === fixedAdminPassword) {
-      // Store in localStorage that Admin is signed in
-      localStorage.setItem("currentUser", "Admin");
+      if (adminID === fixedAdminID && adminPassword === fixedAdminPassword) {
+        // Store in localStorage that Admin is signed in
+        localStorage.setItem("currentUser", "Admin");
 
-      displayMessage("admin-success", "Admin signed in successfully!", false);
-      setTimeout(() => {
-        window.location.href = "index1.html"; // Redirect to Admin dashboard
-      }, 2000);
-    } else {
-      displayMessage("admin-error", "Incorrect Admin ID or Password.");
-    }
-  });
+        displayMessage("admin-success", "Admin signed in successfully!", false);
+        setTimeout(() => {
+          window.location.href = "index1.html"; // Redirect to Admin dashboard
+        }, 2000);
+      } else {
+        displayMessage("admin-error", "Incorrect Admin ID or Password.");
+      }
+    });
 
   // User Sign In Form Submission
-  document.getElementById("signin-form")?.addEventListener("submit", function (e) {
-    e.preventDefault();
-    clearMessages();
+  document
+    .getElementById("signin-form")
+    ?.addEventListener("submit", function (e) {
+      e.preventDefault();
+      clearMessages();
 
-    const username = document.getElementById("signin-username").value.trim();
-    const password = document.getElementById("signin-password").value.trim();
+      const username = document.getElementById("signin-username").value.trim();
+      const password = document.getElementById("signin-password").value.trim();
 
-    if (username && password) {
-      // Store in localStorage that User is signed in
-      localStorage.setItem("currentUser", username);
+      if (username && password) {
+        // Store in localStorage that User is signed in
+        localStorage.setItem("currentUser", username);
 
-      displayMessage("signin-success", "User signed in successfully!", false);
-      setTimeout(() => {
-        window.location.href = "index1.html"; // Redirect to User dashboard
-      }, 2000);
-    } else {
-      displayMessage("signin-error", "Please enter valid credentials.");
-    }
-  });
+        displayMessage("signin-success", "User signed in successfully!", false);
+        setTimeout(() => {
+          window.location.href = "index1.html"; // Redirect to User dashboard
+        }, 2000);
+      } else {
+        displayMessage("signin-error", "Please enter valid credentials.");
+      }
+    });
 
   // Display Username or Admin in Profile Dropdown
   displayUser();
@@ -129,7 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize the username display
   displayUser();
 });
-
 
 // Typing effect
 const textArray = [

@@ -10,20 +10,25 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url("/assets/img/loginbg.jpg") no-repeat center center/cover;
+  background: url("/assets/img/loginbg.jpg") no-repeat center center/cover; /* Background image */
   font-size: 16px;
 }
 
 .container {
-  background-color: rgba(255, 255, 255, 0.95); /* Slight transparency */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.95
+  ); /* Slight transparency for a more modern look */
   padding: 40px 20px;
   border-radius: 12px;
   width: 360px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 550px; /* Adjusted height for additional fields */
+  height: 550px; /* Adjusted for additional form fields */
 }
 
 .form-container {
@@ -61,7 +66,7 @@ body {
 
 .role-toggle button.active,
 .role-toggle button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker blue for hover and active states */
 }
 
 .form-toggle {
@@ -85,7 +90,7 @@ body {
 
 .form-toggle button.active,
 .form-toggle button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Consistent with role-toggle button styling */
 }
 
 form {
@@ -118,12 +123,12 @@ form h2 {
 }
 
 .error-message {
-  color: #e74c3c;
+  color: #e74c3c; /* Red for error messages */
   margin-bottom: 10px;
 }
 
 .success-message {
-  color: #2ecc71;
+  color: #2ecc71; /* Green for success messages */
   margin-bottom: 10px;
 }
 
@@ -132,7 +137,7 @@ form label {
   text-align: left;
   margin-bottom: 5px;
   color: #555;
-  font-weight: 400;
+  font-weight: 400; /* Regular weight for form labels */
 }
 
 form input {
@@ -147,15 +152,15 @@ form input {
 }
 
 form input:focus {
-  border-color: #007bff;
+  border-color: #007bff; /* Blue border on focus */
   outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Light blue shadow on focus */
 }
 
 form button {
   padding: 12px;
   width: 100%;
-  background-color: #28a745;
+  background-color: #28a745; /* Green for the form submit button */
   color: white;
   cursor: pointer;
   border: none;
@@ -166,5 +171,5 @@ form button {
 }
 
 form button:hover {
-  background-color: #218838;
+  background-color: #218838; /* Darker green on hover */
 }
